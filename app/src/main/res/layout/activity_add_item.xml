@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddItem">
+
+    <ImageView
+        android:id="@+id/additem_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:onClick="back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
+    <ImageView
+        android:id="@+id/auctionn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="AuctionOnClick"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/additem_back"
+        app:layout_constraintVertical_bias="0.109" />
+
+    <TextView
+        android:id="@+id/auctiontxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="36dp"
+        android:text="Auction"
+        app:layout_constraintBottom_toBottomOf="@+id/auctionn"
+        app:layout_constraintEnd_toEndOf="@+id/auctionn"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/auctionn"
+        app:layout_constraintTop_toTopOf="@+id/auctionn"
+        app:layout_constraintVertical_bias="0.871" />
+
+    <ImageView
+        android:id="@+id/rentt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="RentOnClick"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.605"
+        app:layout_constraintStart_toEndOf="@+id/auctionn"
+        app:layout_constraintTop_toBottomOf="@+id/additem_back"
+        app:layout_constraintVertical_bias="0.109" />
+
+    <TextView
+        android:id="@+id/renttxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rent"
+        app:layout_constraintBottom_toBottomOf="@+id/rentt"
+        app:layout_constraintEnd_toEndOf="@+id/rentt"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="@+id/rentt"
+        app:layout_constraintTop_toTopOf="@+id/rentt"
+        app:layout_constraintVertical_bias="0.871" />
+
+    <ImageView
+        android:id="@+id/rentroom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="RoomOnClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auctionn"
+        app:layout_constraintVertical_bias="0.204"
+        android:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/rentroomtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rentroom"
+        app:layout_constraintBottom_toBottomOf="@+id/rentroom"
+        app:layout_constraintEnd_toEndOf="@+id/rentroom"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="@+id/rentroom"
+        app:layout_constraintTop_toTopOf="@+id/rentroom"
+        app:layout_constraintVertical_bias="0.825" />
+
+    <ImageView
+        android:id="@+id/salee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="SaleOnClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/rentroom"
+        app:layout_constraintTop_toBottomOf="@+id/rentt"
+        app:layout_constraintVertical_bias="0.201"
+        android:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/saletxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="for sale"
+        app:layout_constraintBottom_toBottomOf="@+id/salee"
+        app:layout_constraintEnd_toEndOf="@+id/salee"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="@+id/salee"
+        app:layout_constraintTop_toTopOf="@+id/salee"
+        app:layout_constraintVertical_bias="0.834" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

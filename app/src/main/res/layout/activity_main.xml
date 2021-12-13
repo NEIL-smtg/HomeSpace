@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/colorPrimaryDark"
+    >
+
+    <TextView
+        android:id="@+id/maintext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="HOMESPACE"
+        android:layout_marginTop="150dp"
+        android:textSize="34sp"
+        android:textColor="@color/colorAccent"/>
+
+    <TextView
+        android:id="@+id/email_title"
+        android:layout_above="@+id/password_session"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-mail"
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent"
+        android:paddingBottom="7dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <TextView
+        android:id="@+id/password_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email_session"
+        android:text="Password"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/colorAccent"/>
+
+
+    <RelativeLayout
+        android:id="@+id/email_session"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/email_title"
+        android:layout_marginLeft="55dp"
+        android:background="@drawable/white_round">
+
+        <TextView
+            android:id="@+id/email_input"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/white_round"
+            android:editable="true"
+            android:hint="example@hotmail.com"
+            android:paddingTop="5dp"
+            android:textSize="19dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/password_session"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/white_round"
+        android:layout_below="@id/email_session"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/password_title"
+        android:layout_marginLeft="20dp"
+        >
+
+        <TextView
+            android:id="@+id/password_txt"
+            android:password="true"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:paddingTop="5dp"
+            android:textSize="19dp"
+            android:hint="password"
+            android:editable="true"
+            android:background="@drawable/white_round"
+            />
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/password_session"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/white_round"
+        android:text="Log In"
+        />
+
+    <RelativeLayout
+        android:id="@+id/google_sign_in"
+        android:layout_below="@+id/loginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/blue_round"
+        android:layout_marginTop="20dp"
+        >
+
+        <ImageButton
+            android:id="@+id/GoogleLogo"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/white_round"
+            android:scaleType="fitCenter"
+            android:src="@drawable/googlelogo" />
+
+        <Button
+            android:id="@+id/signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/GoogleLogo"
+            android:background="#0000ffff"
+            android:text="Sign in with Google"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/forget_pw_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forget password ? Press here"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@id/google_sign_in"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        android:clickable="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/forget_pw_text"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/colorAccent"
+        android:layout_centerInParent="true"
+        android:textSize="15dp"
+        android:text="Sign in with other method ?"
+        android:clickable="true"
+        />
+
+</RelativeLayout>

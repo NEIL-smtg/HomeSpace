@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">HOMESPACE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="tenure_list">
+        <item>Freehold Land</item>
+        <item>Leasehold Land</item>
+        <item>Malay Reserve Land</item>
+    </string-array>
+
+    <string-array name="Furnishing_list">
+        <item>Fully-furnished</item>
+        <item>Partially-furnished</item>
+    </string-array>
+
+    <string-array name="roomsNum_list">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+
+</resources>
