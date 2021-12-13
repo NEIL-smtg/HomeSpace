@@ -4,15 +4,325 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PropertyActionPage">
+    tools:context=".PropertyActionPage"
+    >
 
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/slide_adapter_viewpager"
+    <ScrollView
+        android:id="@+id/action_page_scrollview"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        />
+        android:layout_height="match_parent">
 
+        <RelativeLayout
+            android:id="@+id/scrollview_relativeLay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/slide_adapter_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                />
+
+            <TextView
+                android:id="@+id/property_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/slide_adapter_viewpager"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="PV15 ONSALEEEE DEFAULTTTTTT NOBODY CARESS"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/property_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/property_title"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="DEFAULT DESCRIPTION"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/postedby"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/property_description"
+                android:layout_marginTop="20dp"
+                android:gravity="right"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Posted by "
+                    android:textSize="15sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/agent"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_launcher_background"
+                    android:clickable="true"
+                    />
+
+            </LinearLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/property_card_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/postedby"
+                android:layout_margin="30dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Category : "
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="20dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/category"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="house"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Built-Up : "
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginRight="20dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/builtup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="300"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Land Area : "
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="22dp"
+                            android:layout_marginRight="20dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/landArea"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="300"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tenure : "
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="52dp"
+                            android:layout_marginRight="20dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tenure"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="Freehold land"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Furnishing : "
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/furnishing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="Fully furnished"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Price : "
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="70dp"
+                            android:layout_marginRight="20dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="RM 50000"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="20dp"
+                        android:layout_gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_bed"
+                            android:layout_margin="10dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/roomNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginLeft="5dp"
+                            android:textSize="20sp"
+                            android:text="4"
+                            android:textStyle="bold"
+                            />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_toilet"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="10dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/toiletNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="20sp"
+                            android:text="4"
+                            android:textStyle="bold"
+                            />
+
+                        <ImageView
+                            android:id="@+id/wifi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_wifi"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"
+                            />
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/property_card_detail">
+
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <!--back button-->
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/action_page_back"
         android:layout_width="wrap_content"
@@ -23,26 +333,6 @@
         android:clickable="true"
         android:src="@drawable/ic_arrow_back" />
 
-    <TextView
-        android:id="@+id/property_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/slide_adapter_viewpager"
-        android:layout_margin="20dp"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:text="PV15 ONSALEEEE DEFAULTTTTTT NOBODY CARESS"
-        />
-
-    <TextView
-        android:id="@+id/property_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/property_title"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="DEFAULT DESCRIPTION"
-        android:textSize="18sp" />
+    <include layout="@layout/snippet_bottom_toolbar"/>
 
 </RelativeLayout>

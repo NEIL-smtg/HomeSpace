@@ -10,9 +10,12 @@
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/ic_arrow_back.xml" value="0.1796875" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/ic_back.xml" value="0.1" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1828125" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/ic_baseline_wifi_24.xml" value="0.1796875" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/ic_bed.xml" value="0.1796875" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/ic_forward.xml" value="0.1" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/ic_house.xml" value="0.1828125" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/ic_houses.xml" value="0.1828125" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/ic_toilet.xml" value="0.1796875" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/img.xml" value="0.1828125" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/round.xml" value="0.24375" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/slide_indicator_unselected.xml" value="0.1" />
@@ -49,6 +52,7 @@
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/property.xml" value="0.2" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/property_recommended_card.xml" value="0.2" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/slide_item_container.xml" value="0.1" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/snippet_bottom_toolbar.xml" value="0.2" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/snippet_top_gallerytoolbar.xml" value="0.1" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/xml/file_paths.xml" value="0.1" />
       </map>

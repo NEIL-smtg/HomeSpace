@@ -1,0 +1,52 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow>
+
+                    <Button
+                        android:id="@+id/addtocart"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:text="Add to cart"
+                        android:textSize="18sp"
+                        android:background="@color/teal_200"
+                        android:drawableEnd="@drawable/ic_cart"
+                        />
+
+                    <Button
+                        android:id="@+id/chat"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="chat"
+                        android:layout_weight="4"
+                        android:textSize="18sp"
+                        android:background="@color/colorAccent"
+                        android:drawableEnd="@drawable/ic_chat"
+                        />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </RelativeLayout>
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+</merge>
