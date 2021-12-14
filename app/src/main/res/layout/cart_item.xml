@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cart_cardview"
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="20dp"
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/cart_item_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/cart_item_viewPager"
+            >
+
+
+            <Button
+                android:id="@+id/radio_btn_unchecked"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/ic_radiobtn_unchecked"
+                />
+
+            <Button
+                android:id="@+id/radio_btn_checked"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/ic_radiobtn_checked"
+                android:visibility="invisible" />
+
+
+            <TextView
+                android:id="@+id/cart_propertytitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/radio_btn_unchecked"
+                android:text="PV15 FUCKING ON SALE LOL HAHAHAHAHAHAHAHA"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cart_propertytitle"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/radio_btn_unchecked">
+
+                <include layout="@layout/cart_property_widget" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

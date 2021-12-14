@@ -64,4 +64,7 @@ dependencies {
 
     // FirebaseUI for Firebase Realtime Database
     implementation 'com.firebaseui:firebase-ui-database:8.0.0'
+
+    //notification badge for cart
+    implementation 'com.nex3z:notification-badge:1.0.4'
 }

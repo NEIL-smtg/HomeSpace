@@ -23,17 +23,20 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.common.internal.service.Common;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.nex3z.notificationbadge.NotificationBadge;
 
 import java.util.ArrayList;
 
 public class MainPage extends AppCompatActivity {
 
     ImageView userProfile,add,comparisonCart,setting;
+    NotificationBadge badge;
 
     SharedPreferences preferences;
     String id;
@@ -50,12 +53,18 @@ public class MainPage extends AppCompatActivity {
         add = (ImageView) findViewById(R.id.add);
         comparisonCart = (ImageView) findViewById(R.id.cart);
         setting = (ImageView) findViewById(R.id.setting);
+        badge = (NotificationBadge) findViewById(R.id.notification_badge);
 
         preferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         id = preferences.getString("id","");
 
         setProfilePicture();
         SetRecommendation();
+        UpdateCartCount();
+    }
+
+    private void UpdateCartCount()
+    {
 
     }
 
@@ -112,6 +121,7 @@ public class MainPage extends AppCompatActivity {
                 AgentInfoAdapter agentPropertyItemOnClick = new AgentInfoAdapter();
                 agentPropertyItemOnClick = options.getSnapshots().get(position);
 
+
                 Intent intent = new Intent(MainPage.this, PropertyActionPage.class);
                 intent.putExtra("agentPropertyItemOnClick", agentPropertyItemOnClick);
                 startActivity(intent);
@@ -148,8 +158,8 @@ public class MainPage extends AppCompatActivity {
 
     public void CartOnClick(View view)
     {
-        //Intent i = new Intent(this,cart.class);
-        //startActivity(i);
+        Intent i = new Intent(this,Cart.class);
+        startActivity(i);
     }
 
     public void SettingOnClick(View view)

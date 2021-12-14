@@ -2,9 +2,11 @@ package com.example.homespace;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
@@ -38,7 +40,6 @@ public class PropertyActionPage extends AppCompatActivity {
     TextView title,description,category,builtup, landArea, tenure, furnishing, roomNum, toiletNum, price;
     Button addToCart, Chat;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +69,13 @@ public class PropertyActionPage extends AppCompatActivity {
 
         //bottom toolbar widget
         addToCart = (Button) findViewById(R.id.addtocart);
+        addToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addItemToCart();
+            }
+        });
+
         Chat = (Button) findViewById(R.id.chat);
 
         //agent
@@ -194,7 +202,9 @@ public class PropertyActionPage extends AppCompatActivity {
     private void addItemToCart()
     {
         //pass agent
-        //add animation
+        CartItems.agent.add(agent);
+
+        Toast.makeText(PropertyActionPage.this, "Added to cart", Toast.LENGTH_SHORT).show();
     }
 
 }

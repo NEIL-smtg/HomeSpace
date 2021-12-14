@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeSpace">
         <activity
+            android:name=".Cart"
+            android:exported="true" />
+        <activity
             android:name=".PropertyActionPage"
             android:exported="true" />
         <activity

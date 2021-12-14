@@ -25,6 +25,8 @@ public class AuctionHelperClass {
         this.toilets = toilets;
     }
 
+    public AuctionHelperClass(){}
+
     public String getItemType() {
         return itemType;
     }
