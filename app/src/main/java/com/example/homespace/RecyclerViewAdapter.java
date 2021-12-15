@@ -1,5 +1,7 @@
 package com.example.homespace;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class RecyclerViewAdapter extends FirebaseRecyclerAdapter<AgentInfoAdapter, RecyclerViewAdapter.myViewHolder> {
 
     private OnItemClickListener mListener;
+    private Context context;
 
     public interface OnItemClickListener{
         void onItemClick(int position);
@@ -35,8 +38,9 @@ public class RecyclerViewAdapter extends FirebaseRecyclerAdapter<AgentInfoAdapte
      *
      * @param options
      */
-    public RecyclerViewAdapter(@NonNull FirebaseRecyclerOptions<AgentInfoAdapter> options) {
+    public RecyclerViewAdapter(@NonNull FirebaseRecyclerOptions<AgentInfoAdapter> options, Context context) {
         super(options);
+        this.context=context;
     }
 
     @Override
@@ -53,6 +57,20 @@ public class RecyclerViewAdapter extends FirebaseRecyclerAdapter<AgentInfoAdapte
                 .with(holder.PropertyImage.getContext())
                 .load(model.getThumbnail())
                 .into(holder.PropertyImage);
+
+
+        holder.agentProfilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //start intent agentViewProfilePage
+                //pass agent....
+
+                Intent intent = new Intent(context, agentViewProfilePage.class);
+                intent.putExtra("agentData", model);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @NonNull
@@ -75,6 +93,7 @@ public class RecyclerViewAdapter extends FirebaseRecyclerAdapter<AgentInfoAdapte
             title = (TextView) itemView.findViewById(R.id.Card_title);
             agentProfilePic = (CircleImageView) itemView.findViewById(R.id.agent_imgbtn);
             PropertyImage = (ImageView) itemView.findViewById(R.id.card_thumbnail);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

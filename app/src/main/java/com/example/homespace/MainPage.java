@@ -115,7 +115,7 @@ public class MainPage extends AppCompatActivity {
                         .build();
 
 
-        mainAdapter = new RecyclerViewAdapter(options);
+        mainAdapter = new RecyclerViewAdapter(options,MainPage.this);
         recyclerView.setAdapter(mainAdapter);
 
         mainAdapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
