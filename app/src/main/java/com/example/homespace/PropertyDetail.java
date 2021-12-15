@@ -163,14 +163,14 @@ public class PropertyDetail extends AppCompatActivity {
         int Ntoilets = Integer.parseInt(toilet.getSelectedItem().toString());
 
 
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference(itemType + "/" + id).push();
+        pushID = reference.getKey();
+
         AuctionHelperClass auctionHelperClass = new AuctionHelperClass(
-                Scategory,Stenure,Sfurnishing,Stitle,Sdescription,itemType,
+                Scategory,Stenure,Sfurnishing,Stitle,Sdescription,itemType,pushID,
                 Fbuiltup,FlandArea,Fprice,Nrooms,Nbedrooms,Ntoilets
         );
 
-
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference(itemType + "/" + id).push();
-        pushID = reference.getKey();
         reference.setValue(auctionHelperClass);
 
         //upload image to storage

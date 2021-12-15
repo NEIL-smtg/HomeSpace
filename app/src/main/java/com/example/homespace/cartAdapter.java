@@ -105,8 +105,6 @@ public class cartAdapter extends RecyclerView.Adapter<cartAdapter.cartAdapterVH>
                     holder.price.setText("RM " + snapshot.child("price").getValue().toString());
                 }
 
-
-
             }
 
             @Override

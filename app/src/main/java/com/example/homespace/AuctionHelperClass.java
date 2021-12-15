@@ -2,13 +2,13 @@ package com.example.homespace;
 
 public class AuctionHelperClass {
 
-    String category,tenure,furnishing,title,description,itemType;
+    String category,tenure,furnishing,title,description,itemType,pushID;
     float builtup,landArea,price;
     int rooms,bedrooms,toilets;
 
     public AuctionHelperClass(
             String category, String tenure, String furnishing,
-            String title, String description, String itemType, float builtup,
+            String title, String description, String itemType,String pushID, float builtup,
             float landArea, float price, int rooms, int bedrooms, int toilets
     ) {
         this.category = category;
@@ -17,6 +17,7 @@ public class AuctionHelperClass {
         this.title = title;
         this.description = description;
         this.itemType=itemType;
+        this.pushID = pushID;
         this.builtup = builtup;
         this.landArea = landArea;
         this.price = price;
@@ -26,6 +27,14 @@ public class AuctionHelperClass {
     }
 
     public AuctionHelperClass(){}
+
+    public String getPushID() {
+        return pushID;
+    }
+
+    public void setPushID(String pushID) {
+        this.pushID = pushID;
+    }
 
     public String getItemType() {
         return itemType;

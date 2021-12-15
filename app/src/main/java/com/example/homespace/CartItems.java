@@ -9,8 +9,8 @@ public class CartItems {
     public static ArrayList<AgentInfoAdapter> agent = new ArrayList<>();
     public static ArrayList<AgentInfoAdapter> compareList = new ArrayList<>();
 
-    public static MutableLiveData<Boolean> comparelistchecker = new MutableLiveData<Boolean>();
-    public static MutableLiveData<Boolean> itemAdded = new MutableLiveData<Boolean>();
+    public static MutableLiveData<Boolean> comparelistchecker = new MutableLiveData<>();
+    public static MutableLiveData<Boolean> itemAdded = new MutableLiveData<>();
 
     public CartItems() { }
 }

@@ -67,4 +67,5 @@ dependencies {
 
     //notification badge for cart
     implementation 'com.nex3z:notification-badge:1.0.4'
+
 }

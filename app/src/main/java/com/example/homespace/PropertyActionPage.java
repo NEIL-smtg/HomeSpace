@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -208,6 +209,28 @@ public class PropertyActionPage extends AppCompatActivity {
 
     private void addItemToCart()
     {
+        /*//get user id
+        SharedPreferences preferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        String id = preferences.getString("id","");
+
+        //set firebase path
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Cart/"+id);
+
+        //store cart in firebase
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int size=(int) snapshot.getChildrenCount();
+
+                reference.child("cart"+size).setValue(agent.getPushID());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) { }
+        });
+        */
+
+
         int i , size = CartItems.agent.size();
 
         for (i=0 ; i<size ; i++)
@@ -227,5 +250,4 @@ public class PropertyActionPage extends AppCompatActivity {
             Toast.makeText(PropertyActionPage.this, "Added to cart", Toast.LENGTH_SHORT).show();
         }
     }
-
 }

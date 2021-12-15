@@ -38,6 +38,7 @@
         android:layout_marginRight="15dp"
         android:layout_toLeftOf="@id/setting"
         >
+
         <include layout="@layout/notification_icon" />
 
     </RelativeLayout>
