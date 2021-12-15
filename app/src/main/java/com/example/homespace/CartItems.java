@@ -10,7 +10,7 @@ public class CartItems {
     public static ArrayList<AgentInfoAdapter> compareList = new ArrayList<>();
 
     public static MutableLiveData<Boolean> comparelistchecker = new MutableLiveData<Boolean>();
-    public static MutableLiveData<Boolean> updateRecyclerView = new MutableLiveData<Boolean>();
+    public static MutableLiveData<Boolean> itemAdded = new MutableLiveData<Boolean>();
 
     public CartItems() { }
 }

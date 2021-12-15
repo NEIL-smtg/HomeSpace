@@ -2,6 +2,7 @@ package com.example.homespace;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -58,6 +59,7 @@ public class MainPage extends AppCompatActivity {
         preferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         id = preferences.getString("id","");
 
+
         setProfilePicture();
         SetRecommendation();
         UpdateCartCount();
@@ -65,7 +67,17 @@ public class MainPage extends AppCompatActivity {
 
     private void UpdateCartCount()
     {
+        //initialise
+        badge.setText(""+CartItems.agent.size());
 
+
+        CartItems.itemAdded.observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean)
+            {
+                badge.setText(""+CartItems.agent.size());
+            }
+        });
     }
 
 

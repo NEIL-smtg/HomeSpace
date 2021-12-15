@@ -47,13 +47,22 @@
 
             <TextView
                 android:id="@+id/cart_propertytitle"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/radio_btn_unchecked"
                 android:text="PV15 FUCKING ON SALE LOL HAHAHAHAHAHAHAHA"
                 android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/cartdelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radio_btn_unchecked"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_red_delete"
+                />
 
             <RelativeLayout
                 android:layout_width="wrap_content"

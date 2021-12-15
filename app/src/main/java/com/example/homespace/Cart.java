@@ -26,13 +26,9 @@ import java.util.ArrayList;
 public class Cart extends AppCompatActivity {
 
     //widgets
-    public static ImageView back, cancel, delete, compare;
-    public static Button radioButton_unchecked,radioButton_checked;
-    TextView select;
+    ImageView back, cancel, compare;
 
-    ArrayList<AgentInfoAdapter> cart_agentlist;
     RecyclerView recyclerView;
-    CartRecyclerViewAdapter adapter;
 
 
     @Override
@@ -40,12 +36,9 @@ public class Cart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-
         //widget
         cancel = (ImageView) findViewById(R.id.cart_cancel_compare) ;
-        delete = (ImageView) findViewById(R.id.cart_delete);
         compare = (ImageView) findViewById(R.id.cart_compare);
-
 
         back = (ImageView) findViewById(R.id.cart_back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -57,86 +50,50 @@ public class Cart extends AppCompatActivity {
 
         setupCart();
         observeCompareList();
+        setupButtonListener();
+    }
 
+    private void setupButtonListener()
+    {
+        //deselect all property if cancel on click
         cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CartItems.compareList.clear();
+                CartItems.comparelistchecker.setValue(false);
+                setupCart();
+            }
+        });
+
+
+        compare.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v)
             {
-                CartItems.compareList.clear();
-                CartItems.comparelistchecker.setValue(false);
-
-                CardView cardView = (CardView) findViewById(R.id.cart_cardview);
-                cardView.setCardBackgroundColor(getResources().getColor(R.color.white));
+                //start new intent to compare
+                Intent intent = new Intent(Cart.this, PropertyCompare.class);
+                startActivity(intent);
             }
         });
 
-
-        CartItems.updateRecyclerView.observe(this, new Observer<Boolean>() {
-            @Override
-            public void onChanged(Boolean newBoolean) {
-                if (newBoolean)
-                {
-                    setupCart();
-
-                }
-            }
-        });
-
-        compare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Intent intent = new Intent(Cart.this, PropertyCompare);
-                //startActivity(intent);
-            }
-        });
     }
 
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        adapter.startListening();
-    }
-
-    /*
-    @Override
-    protected void onStop() {
-        super.onStop();
-        adapter.stopListening();
-    }*/
 
     private void setupCart() {
-        cart_agentlist = CartItems.agent;
 
         recyclerView = (RecyclerView) findViewById(R.id.cart_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //get all the agents from firebase
-        FirebaseRecyclerOptions<AgentInfoAdapter> options =
-                new FirebaseRecyclerOptions.Builder<AgentInfoAdapter>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference("Agents"), AgentInfoAdapter.class)
-                        .build();
-
-
-        // keep the agents only if their property in cart
-        for (int i=0 ; i<options.getSnapshots().size() ; i++)
-        {
-            if (options.getSnapshots().get(i).getPushID() != cart_agentlist.get(i).pushID)
-            {
-                options.getSnapshots().remove(i);
-            }
-        }
-
-        //display recycler view
-        adapter = new CartRecyclerViewAdapter(options,Cart.this);
-        recyclerView.setAdapter(adapter);
+        cartAdapter cartAdapter = new cartAdapter(Cart.this);
+        recyclerView.setAdapter(cartAdapter);
 
         //when item on click
-        adapter.setOnItemClickListener(new CartRecyclerViewAdapter.OnItemClickListener() {
+        cartAdapter.setOnItemClickListener(new cartAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 AgentInfoAdapter agentPropertyItemOnClick = new AgentInfoAdapter();
-                agentPropertyItemOnClick = options.getSnapshots().get(position);
+                agentPropertyItemOnClick = CartItems.agent.get(position);
 
 
                 Intent intent = new Intent(Cart.this, PropertyActionPage.class);
@@ -144,8 +101,6 @@ public class Cart extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
     private void observeCompareList()
@@ -158,15 +113,16 @@ public class Cart extends AppCompatActivity {
                 {
                     back.setVisibility(View.INVISIBLE);
                     cancel.setVisibility(View.VISIBLE);
-                    compare.setVisibility(View.VISIBLE);
-                    delete.setVisibility(View.VISIBLE);
+                    if (CartItems.compareList.size() > 1)
+                    {
+                        compare.setVisibility(View.VISIBLE);
+                    }
                 }
                 else
                 {
                     back.setVisibility(View.VISIBLE);
                     cancel.setVisibility(View.INVISIBLE);
                     compare.setVisibility(View.INVISIBLE);
-                    delete.setVisibility(View.INVISIBLE);
                 }
             }
         });

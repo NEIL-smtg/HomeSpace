@@ -46,19 +46,6 @@
 
 
                 <ImageView
-                    android:id="@+id/cart_delete"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:src="@drawable/ic_delete"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/cart_compare"
-                    android:layout_marginRight="15dp"
-                    android:clickable="true"
-                    android:visibility="invisible"
-                    />
-
-
-                <ImageView
                     android:id="@+id/cart_compare"
                     android:layout_width="36dp"
                     android:layout_height="36dp"

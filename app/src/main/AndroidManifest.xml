@@ -16,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeSpace">
         <activity
+            android:name=".agentViewProfilePage"
+            android:exported="true" />
+        <activity
+            android:name=".PropertyCompare"
+            android:exported="true" />
+        <activity
             android:name=".Cart"
             android:exported="true" />
         <activity

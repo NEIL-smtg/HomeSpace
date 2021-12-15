@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Display;
@@ -190,21 +191,41 @@ public class PropertyActionPage extends AppCompatActivity {
                 .load(ProfilePicLink)
                 .into(agentProPic);
 
+
         agentProPic.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 //start intent agentViewProfilePage
                 //pass agent....
+
+                Intent intent = new Intent(PropertyActionPage.this, agentViewProfilePage.class);
+                intent.putExtra("agentData", agent);
+                startActivity(intent);
             }
         });
     }
 
     private void addItemToCart()
     {
-        //pass agent
-        CartItems.agent.add(agent);
+        int i , size = CartItems.agent.size();
 
-        Toast.makeText(PropertyActionPage.this, "Added to cart", Toast.LENGTH_SHORT).show();
+        for (i=0 ; i<size ; i++)
+        {
+            if (CartItems.agent.get(i).getPushID() == agent.getPushID())
+            {
+                Toast.makeText(PropertyActionPage.this, "Already in cart", Toast.LENGTH_SHORT).show();
+                break;
+            }
+        }
+
+        if (i == size)
+        {
+            //if property not in cart
+            CartItems.agent.add(agent);
+            CartItems.itemAdded.setValue(true);
+            Toast.makeText(PropertyActionPage.this, "Added to cart", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }
