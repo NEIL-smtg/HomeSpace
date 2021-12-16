@@ -7,6 +7,7 @@
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/blue_round.xml" value="0.24375" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/bottom_background_light_green.xml" value="0.1" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/circle.xml" value="0.1828125" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/compare_text_item.xml" value="0.1796875" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/gradient_bg.xml" value="0.1828125" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/ic_arrow_back.xml" value="0.1796875" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/ic_back.xml" value="0.1" />
@@ -22,6 +23,7 @@
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/round.xml" value="0.24375" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/slide_indicator_unselected.xml" value="0.1" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/slides_button_style.xml" value="0.1" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/vertical_line.xml" value="0.1796875" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/white_round.xml" value="0.24375" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_add_item.xml" value="0.176" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_agent_view_profile_page.xml" value="0.176" />
@@ -34,7 +36,7 @@
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_profile.xml" value="0.2" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_property.xml" value="0.167578125" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_property_action_page.xml" value="0.176" />
-        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_property_compare.xml" value="0.164453125" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_property_compare.xml" value="0.264" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_property_detail.xml" value="0.264" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_register.xml" value="0.21807967313585291" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_setting.xml" value="0.167578125" />
@@ -44,6 +46,7 @@
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/cart_property_widget.xml" value="0.2" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/cart_snippet_top.xml" value="0.2" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/compare_snippet_top.xml" value="0.164453125" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/compare_text_item.xml" value="0.176" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/fragment_add_item.xml" value="0.264" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/fragment_add_property.xml" value="0.264" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/fragment_gallery.xml" value="0.1" />
@@ -64,6 +67,7 @@
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/slide_item_container.xml" value="0.1" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/snippet_bottom_toolbar.xml" value="0.2" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/snippet_top_gallerytoolbar.xml" value="0.1" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/vertical_line.xml" value="0.164453125" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/xml/file_paths.xml" value="0.1" />
       </map>
     </option>

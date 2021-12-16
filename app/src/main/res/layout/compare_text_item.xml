@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="10dp"
+    >
+
+    <TableRow>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/compare_viewPager"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/compare_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Title"
+            android:layout_margin="10dp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/compare_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Category"
+            android:layout_margin="10dp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/compare_tenure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Tenure"
+            android:layout_margin="10dp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+           android:id="@+id/compare_furnishing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Furnishing"
+            android:layout_margin="10dp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/compare_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Type"
+            android:layout_margin="10dp"
+            />
+    </TableRow>
+
+
+    <TableRow>
+        <TextView
+            android:id="@+id/compare_builtup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Built-up"
+            android:layout_margin="10dp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/compare_landarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Land Area"
+            android:layout_margin="10dp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/compare_bedroom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Bedrooms"
+            android:layout_margin="10dp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/compare_washroom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Washrooms"
+            android:layout_margin="10dp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/compare_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Price"
+            android:layout_margin="10dp"
+            />
+    </TableRow>
+
+</TableLayout>
