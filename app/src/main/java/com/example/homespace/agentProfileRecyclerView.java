@@ -123,9 +123,7 @@ public class agentProfileRecyclerView extends FirebaseRecyclerAdapter<AuctionHel
             radiobtn_checked = (Button) itemView.findViewById(R.id.radio_btn_checked);
             cardView = (CardView) itemView.findViewById(R.id.cart_cardview);
 
-            /*delete.setVisibility(View.INVISIBLE);
-            radiobtn_checked.setVisibility(View.INVISIBLE);
-            radiobtn_unchecked.setVisibility(View.INVISIBLE);*/
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

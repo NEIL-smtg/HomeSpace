@@ -152,6 +152,9 @@ public class cartAdapter extends RecyclerView.Adapter<cartAdapter.cartAdapterVH>
             compare = (ImageView) itemView.findViewById(R.id.cart_compare);
             back = (ImageView) itemView.findViewById(R.id.cart_back);
 
+            delete.setVisibility(View.VISIBLE);
+            radiobtn_unchecked.setVisibility(View.VISIBLE);
+
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
