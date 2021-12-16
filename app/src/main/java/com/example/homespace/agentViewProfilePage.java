@@ -84,7 +84,7 @@ public class agentViewProfilePage extends AppCompatActivity {
     {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //get agents
+        //get property data
         FirebaseRecyclerOptions<AuctionHelperClass> options =
                 new FirebaseRecyclerOptions.Builder<AuctionHelperClass>()
                         .setQuery(FirebaseDatabase.getInstance().getReference( itemType+"/"+id), AuctionHelperClass.class)
@@ -93,6 +93,42 @@ public class agentViewProfilePage extends AppCompatActivity {
 
         mainAdapter = new agentProfileRecyclerView(options,agentViewProfilePage.this, id);
         recyclerView.setAdapter(mainAdapter);
+
+
+        mainAdapter.setOnItemClickListener(new agentProfileRecyclerView.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Agents");
+
+                reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        AgentInfoAdapter agentfromdb= new AgentInfoAdapter();
+                        ArrayList<AgentInfoAdapter> agentdblist = new ArrayList<>();
+
+                        for (DataSnapshot ds : snapshot.getChildren()) {
+                            agentfromdb = ds.getValue(AgentInfoAdapter.class);
+
+                            //work in mainpage
+                            if (agentfromdb.getId().equals(agent.getId()))
+                            {
+                                agentdblist.add(agentfromdb);
+                            }
+                        }
+
+
+                        Intent intent = new Intent(agentViewProfilePage.this, PropertyActionPage.class);
+                        intent.putExtra("agentPropertyItemOnClick", agentdblist.get(position));
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) { }
+                });
+            }
+        });
     }
 
     private void setup()

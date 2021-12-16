@@ -27,6 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -34,7 +35,7 @@ public class PropertyActionPage extends AppCompatActivity {
 
     AgentInfoAdapter agent;
     ArrayList<String> sliderItems;
-    String id,pushID,itemType;
+    String id,pushID,itemType,titledata;
 
     //widget
     CircleImageView back, agentProPic;
@@ -49,11 +50,13 @@ public class PropertyActionPage extends AppCompatActivity {
 
         sliderItems = new ArrayList<>();
 
+
         //get incoming intent agent data
         agent = getIntent().getParcelableExtra("agentPropertyItemOnClick");
         id = agent.getId();
         pushID = agent.getPushID();
         itemType = agent.getItemType();
+        titledata = agent.getTitle();
 
 
         //property detail widget
@@ -122,7 +125,7 @@ public class PropertyActionPage extends AppCompatActivity {
 
     private void DisplayPropertyDetail()
     {
-        title.setText(agent.getTitle());
+        title.setText(titledata);
 
         //firebase reference
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference(itemType + "/" + id + "/" + pushID);

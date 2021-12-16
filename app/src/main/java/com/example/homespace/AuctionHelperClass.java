@@ -1,6 +1,9 @@
 package com.example.homespace;
 
-public class AuctionHelperClass {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class AuctionHelperClass implements Parcelable {
 
     String category,tenure,furnishing,title,description,itemType,pushID;
     float builtup,landArea,price;
@@ -27,6 +30,34 @@ public class AuctionHelperClass {
     }
 
     public AuctionHelperClass(){}
+
+    protected AuctionHelperClass(Parcel in) {
+        category = in.readString();
+        tenure = in.readString();
+        furnishing = in.readString();
+        title = in.readString();
+        description = in.readString();
+        itemType = in.readString();
+        pushID = in.readString();
+        builtup = in.readFloat();
+        landArea = in.readFloat();
+        price = in.readFloat();
+        rooms = in.readInt();
+        bedrooms = in.readInt();
+        toilets = in.readInt();
+    }
+
+    public static final Creator<AuctionHelperClass> CREATOR = new Creator<AuctionHelperClass>() {
+        @Override
+        public AuctionHelperClass createFromParcel(Parcel in) {
+            return new AuctionHelperClass(in);
+        }
+
+        @Override
+        public AuctionHelperClass[] newArray(int size) {
+            return new AuctionHelperClass[size];
+        }
+    };
 
     public String getPushID() {
         return pushID;
@@ -130,5 +161,27 @@ public class AuctionHelperClass {
 
     public void setToilets(int toilets) {
         this.toilets = toilets;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(category);
+        dest.writeString(tenure);
+        dest.writeString(furnishing);
+        dest.writeString(title);
+        dest.writeString(description);
+        dest.writeString(itemType);
+        dest.writeString(pushID);
+        dest.writeFloat(builtup);
+        dest.writeFloat(landArea);
+        dest.writeFloat(price);
+        dest.writeInt(rooms);
+        dest.writeInt(bedrooms);
+        dest.writeInt(toilets);
     }
 }
