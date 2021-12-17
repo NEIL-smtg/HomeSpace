@@ -67,7 +67,7 @@ public class agentProfileRecyclerView extends FirebaseRecyclerAdapter<AuctionHel
         holder.furnishing.setText(model.getFurnishing());
         holder.price.setText("RM "+ model.getPrice());
         holder.landarea.setText(model.getLandArea() + " ft");
-        holder.roomNum.setText(""+model.getRooms());
+        holder.roomNum.setText(""+model.getBedrooms());
         holder.toiletNum.setText(""+model.getToilets());
 
 

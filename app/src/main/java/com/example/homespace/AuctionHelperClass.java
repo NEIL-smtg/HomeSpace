@@ -7,12 +7,12 @@ public class AuctionHelperClass implements Parcelable {
 
     String category,tenure,furnishing,title,description,itemType,pushID;
     float builtup,landArea,price;
-    int rooms,bedrooms,toilets;
+    int bedrooms,toilets;
 
     public AuctionHelperClass(
             String category, String tenure, String furnishing,
             String title, String description, String itemType,String pushID, float builtup,
-            float landArea, float price, int rooms, int bedrooms, int toilets
+            float landArea, float price, int bedrooms, int toilets
     ) {
         this.category = category;
         this.tenure = tenure;
@@ -24,7 +24,6 @@ public class AuctionHelperClass implements Parcelable {
         this.builtup = builtup;
         this.landArea = landArea;
         this.price = price;
-        this.rooms = rooms;
         this.bedrooms = bedrooms;
         this.toilets = toilets;
     }
@@ -42,7 +41,6 @@ public class AuctionHelperClass implements Parcelable {
         builtup = in.readFloat();
         landArea = in.readFloat();
         price = in.readFloat();
-        rooms = in.readInt();
         bedrooms = in.readInt();
         toilets = in.readInt();
     }
@@ -139,14 +137,6 @@ public class AuctionHelperClass implements Parcelable {
         this.price = price;
     }
 
-    public int getRooms() {
-        return rooms;
-    }
-
-    public void setRooms(int rooms) {
-        this.rooms = rooms;
-    }
-
     public int getBedrooms() {
         return bedrooms;
     }
@@ -180,7 +170,6 @@ public class AuctionHelperClass implements Parcelable {
         dest.writeFloat(builtup);
         dest.writeFloat(landArea);
         dest.writeFloat(price);
-        dest.writeInt(rooms);
         dest.writeInt(bedrooms);
         dest.writeInt(toilets);
     }

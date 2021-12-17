@@ -9,6 +9,7 @@
 
     <include layout="@layout/edit_property_snippet_top"/>
 
+
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -107,9 +108,11 @@
     </HorizontalScrollView>
 
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-
-    <LinearLayout
+        <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -139,6 +142,7 @@
                     android:id="@+id/editTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:maxLength="80"
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:text="PV15 hello"
@@ -162,6 +166,7 @@
                     android:id="@+id/editDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:maxLength="80"
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:text="PV15 hello"
@@ -258,10 +263,10 @@
                     android:id="@+id/editBuiltup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:maxLength="8"
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:text="Built-up"
                     android:layout_marginTop="10dp"
                     android:inputType="numberDecimal"
                     android:textAlignment="center"
@@ -283,10 +288,10 @@
                     android:id="@+id/editLandArea"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:maxLength="8"
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:text="Land Area"
                     android:inputType="number"
                     android:layout_marginTop="10dp"
                     android:textAlignment="center"
@@ -304,17 +309,16 @@
                     android:layout_margin="10dp"
                     />
 
-                <EditText
+                <Spinner
                     android:id="@+id/editBedroom"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:text="Bedrooms"
-                    android:inputType="numberDecimal"
                     android:layout_marginTop="10dp"
                     android:textAlignment="center"
+                    android:entries="@array/roomsNum_list"
                     />
             </TableRow>
 
@@ -329,17 +333,16 @@
                     android:layout_margin="10dp"
                     />
 
-                <EditText
+                <Spinner
                     android:id="@+id/editToilet"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:text="Washrooms"
-                    android:inputType="number"
                     android:layout_marginTop="10dp"
                     android:textAlignment="center"
+                    android:entries="@array/roomsNum_list"
                     />
 
             </TableRow>
@@ -359,6 +362,7 @@
                     android:id="@+id/editPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:maxLength="9"
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -374,6 +378,6 @@
 
     </LinearLayout>
 
-
+    </ScrollView>
 
 </LinearLayout>

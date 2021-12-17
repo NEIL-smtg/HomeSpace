@@ -31,8 +31,8 @@ public class editProperty extends AppCompatActivity {
     ImageView back,add;
     ArrayList<ImageView> editImage = new ArrayList<>();
     ImageView editImage1,editImage2,editImage3,editImage4,editImage5,editImage6,editImage7,editImage8,editImage9;
-    Spinner category,tenure,furnishing;
-    EditText title,builtup,landarea,bedrooms,toilets,price,description;
+    Spinner category,tenure,furnishing,bedrooms,toilets;
+    EditText title,builtup,landarea,price,description;
     TextView save;
 
     //vars
@@ -76,8 +76,8 @@ public class editProperty extends AppCompatActivity {
                         title.getEditableText().toString(),description.getEditableText().toString(),
                         itemType,pushID,
                         Float.parseFloat(builtup.getEditableText().toString()),Float.parseFloat(landarea.getEditableText().toString()),
-                        Float.parseFloat(price.getEditableText().toString()),0,Integer.parseInt(bedrooms.getEditableText().toString()),
-                        Integer.parseInt(toilets.getEditableText().toString())
+                        Float.parseFloat(price.getEditableText().toString()),Integer.parseInt(bedrooms.getSelectedItem().toString()),
+                        Integer.parseInt(toilets.getSelectedItem().toString())
                 );
 
         ProgressDialog progressDialog = new ProgressDialog(this);
@@ -119,8 +119,6 @@ public class editProperty extends AppCompatActivity {
         title.setText(aucData.getTitle());
         builtup.setText(aucData.getBuiltup()+"");
         landarea.setText(aucData.getLandArea()+"");
-        bedrooms.setText(aucData.getBedrooms()+"");
-        toilets.setText(aucData.getToilets()+"");
         price.setText(aucData.getPrice()+"");
         description.setText(aucData.getDescription());
 
@@ -186,12 +184,12 @@ public class editProperty extends AppCompatActivity {
         category = (Spinner) findViewById(R.id.editCategory);
         tenure = (Spinner) findViewById(R.id.editTenure);
         furnishing = (Spinner) findViewById(R.id.editFurnishing);
+        bedrooms = (Spinner) findViewById(R.id.editBedroom);
+        toilets = (Spinner) findViewById(R.id.editToilet);
 
         title = (EditText) findViewById(R.id.editTitle);
         builtup = (EditText) findViewById(R.id.editBuiltup);
         landarea = (EditText) findViewById(R.id.editLandArea);
-        bedrooms = (EditText) findViewById(R.id.editBedroom);
-        toilets = (EditText) findViewById(R.id.editToilet);
         price = (EditText) findViewById(R.id.editPrice);
         description = (EditText) findViewById(R.id.editDescription);
 

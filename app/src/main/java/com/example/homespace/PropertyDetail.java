@@ -18,12 +18,14 @@ import android.provider.MediaStore;
 import android.provider.SyncStateContract;
 import android.view.View;
 import android.webkit.MimeTypeMap;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -54,10 +56,12 @@ public class PropertyDetail extends AppCompatActivity {
 
     //widgets
     ImageView back,imgUploader;
-    ProgressBar progressBar;
-    EditText category, title, description, builtup, landArea, price;
-    Spinner tenure,furnishing,rooms,bedrooms,toilet;
+    ArrayList<ImageView> editImage = new ArrayList<>();
+    ImageView editImage1,editImage2,editImage3,editImage4,editImage5,editImage6,editImage7,editImage8,editImage9;
+    EditText title, description, builtup, landArea, price;
+    Spinner category,tenure,furnishing,bedrooms,toilet;
     ProgressDialog progressDialog;
+    Button submit;
 
     //CONSTANT
     public static final int GALLERY_PICK_IMAGE = 1;
@@ -73,25 +77,54 @@ public class PropertyDetail extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         id = preferences.getString("id","");
 
-        back = (ImageView) findViewById(R.id.propertydetailback);
+        setWidgetID();
 
-        category = (EditText) findViewById(R.id.category_gettxt);
+        getIncomingIntent();
+    }
 
-        title = (EditText) findViewById(R.id.title_gettxt);
-        description = (EditText) findViewById(R.id.description_gettxt);
-        builtup = (EditText) findViewById(R.id.builtup_gettxt);
-        landArea = (EditText) findViewById(R.id.landarea_gettxt);
-        price = (EditText) findViewById(R.id.price_gettxt);
+    private void setWidgetID(){
+        submit =(Button) findViewById(R.id.submit);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SubmitOnClick();
+            }
+        });
+
+        title = (EditText) findViewById(R.id.addTitle);
+        description = (EditText) findViewById(R.id.addDescription);
+        builtup = (EditText) findViewById(R.id.addBuiltup);
+        landArea = (EditText) findViewById(R.id.addLandArea);
+        price = (EditText) findViewById(R.id.addPrice);
         imgUploader = (ImageView) findViewById(R.id.upload_img);
 
-        tenure = (Spinner) findViewById(R.id.tenure_spinner);
-        furnishing = (Spinner) findViewById(R.id.furnishing_spinner);
-        rooms = (Spinner) findViewById(R.id.roomsNum_spinner);
-        bedrooms = (Spinner) findViewById(R.id.bedRoomsNum_spinner);
-        toilet = (Spinner) findViewById(R.id.toiletNum_spinner);
+        category = (Spinner) findViewById(R.id.addCategory);
+        tenure = (Spinner) findViewById(R.id.addTenure);
+        furnishing = (Spinner) findViewById(R.id.addFurnishing);
+        bedrooms = (Spinner) findViewById(R.id.addBedroom);
+        toilet = (Spinner) findViewById(R.id.addToilet);
 
-        progressBar = (ProgressBar) findViewById(R.id.imguploader_progressBar);
-        progressBar.setVisibility(View.INVISIBLE);
+        back = (ImageView) findViewById(R.id.addBack);
+        editImage1 = (ImageView) findViewById(R.id.editImage1);
+        editImage2 = (ImageView) findViewById(R.id.editImage2);
+        editImage3 = (ImageView) findViewById(R.id.editImage3);
+        editImage4 = (ImageView) findViewById(R.id.editImage4);
+        editImage5 = (ImageView) findViewById(R.id.editImage5);
+        editImage6 = (ImageView) findViewById(R.id.editImage6);
+        editImage7 = (ImageView) findViewById(R.id.editImage7);
+        editImage8 = (ImageView) findViewById(R.id.editImage8);
+        editImage9 = (ImageView) findViewById(R.id.editImage9);
+
+        editImage.add(editImage1);
+        editImage.add(editImage2);
+        editImage.add(editImage3);
+        editImage.add(editImage4);
+        editImage.add(editImage5);
+        editImage.add(editImage6);
+        editImage.add(editImage7);
+        editImage.add(editImage8);
+        editImage.add(editImage9);
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,8 +132,6 @@ public class PropertyDetail extends AppCompatActivity {
                 finish();
             }
         });
-
-        getIncomingIntent();
 
         progressDialog = new ProgressDialog(PropertyDetail.this);
         progressDialog.setMessage("Uploading images !!! please wait.....");
@@ -136,6 +167,17 @@ public class PropertyDetail extends AppCompatActivity {
                     ImageList.add(imageUri);
                     currentImagesSelected++;
                 }
+
+
+                for (int i = 0; i < ImageList.size() ; i++)
+                {
+                    Glide
+                    .with(PropertyDetail.this)
+                    .load(ImageList.get(i))
+                    .into(editImage.get(i));
+                }
+
+
             }
             else
             {
@@ -145,11 +187,11 @@ public class PropertyDetail extends AppCompatActivity {
     }
 
 
-    public void SubmitOnClick(View view)
+    public void SubmitOnClick()
     {
         //get all the property data
         // S stand for String , N stand for number
-        String Scategory = category.getText().toString();
+        String Scategory = category.getSelectedItem().toString();
         String Stitle = title.getText().toString();
         String Sdescription = description.getText().toString();
         Float Fbuiltup =Float.parseFloat(builtup.getText().toString());
@@ -158,7 +200,6 @@ public class PropertyDetail extends AppCompatActivity {
 
         String Stenure = tenure.getSelectedItem().toString();
         String Sfurnishing = furnishing.getSelectedItem().toString();
-        int Nrooms = Integer.parseInt(rooms.getSelectedItem().toString());
         int Nbedrooms = Integer.parseInt(bedrooms.getSelectedItem().toString());
         int Ntoilets = Integer.parseInt(toilet.getSelectedItem().toString());
 
@@ -168,7 +209,7 @@ public class PropertyDetail extends AppCompatActivity {
 
         AuctionHelperClass auctionHelperClass = new AuctionHelperClass(
                 Scategory,Stenure,Sfurnishing,Stitle,Sdescription,itemType,pushID,
-                Fbuiltup,FlandArea,Fprice,Nrooms,Nbedrooms,Ntoilets
+                Fbuiltup,FlandArea,Fprice,Nbedrooms,Ntoilets
         );
 
         reference.setValue(auctionHelperClass);

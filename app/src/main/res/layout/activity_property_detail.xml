@@ -1,345 +1,395 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="20dp"
-    tools:context=".PropertyDetail">
+    tools:context=".PropertyCompare"
+    android:orientation="vertical">
+
+    <include layout="@layout/add_property_snippet_top"/>
+
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-
-
-            <Button
-                android:id="@+id/submit"
-                android:layout_width="83dp"
-                android:layout_height="43dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:onClick="SubmitOnClick"
-                android:text="Submit" />
-
-            <ImageView
-                android:id="@+id/propertydetailback"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="14dp"
-                app:srcCompat="@drawable/ic_back" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center_horizontal"
+            >
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/search_view"
-                android:layout_width="268dp"
-                android:layout_height="34dp"
-                android:layout_below="@+id/propertydetailback"
-                android:layout_centerHorizontal="true"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:focusable="false"
+                app:defaultQueryHint="location"
                 app:closeIcon="@drawable/ic_delete"
                 app:iconifiedByDefault="false"
-                app:queryHint="Location"
-                app:searchIcon="@drawable/ic_baseline_search_24">
+                app:searchIcon="@drawable/ic_baseline_search_24" />
 
-            </androidx.appcompat.widget.SearchView>
-
-            <TextView
-                android:id="@+id/categorytxt"
-                android:layout_width="wrap_content"
+            <TableLayout
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/search_view"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="24dp"
-                android:text="Category"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/builtuptxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/categorytxt"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="40dp"
-                android:text="built-up"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/landareatxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/builtuptxt"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="40dp"
-                android:text="Land Area"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/tenuretxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/landareatxt"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="35dp"
-                android:text="Tenure"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/furnishingtxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tenuretxt"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="35dp"
-                android:text="Furnishing"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/roomstxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/furnishingtxt"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="35dp"
-                android:text="Rooms"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/bedroomtxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/roomstxt"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="35dp"
-                android:text="Bedrooms"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/toilettxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/bedroomtxt"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="40dp"
-                android:text="Toilet"
-                android:textSize="16sp"
-                />
-
-
-            <TextView
-                android:id="@+id/titletxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/toilettxt"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="50dp"
-                android:text="Title"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/descriptiontxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/titletxt"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="50dp"
-                android:text="Description"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/askingpricetxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/descriptiontxt"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="30dp"
-                android:text="Asking Price"
-                android:textSize="16sp" />
-
-
-            <EditText
-                android:id="@+id/price_gettxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/description_gettxt"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="55dp"
+                android:layout_marginRight="10dp"
+                android:divider="@drawable/vertical_line"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                android:layout_toRightOf="@id/askingpricetxt"
-                android:inputType="numberDecimal"
-                android:textSize="14sp" />
+                android:layout_gravity="center_horizontal"
+                >
 
-            <EditText
-                android:id="@+id/category_gettxt"
-                android:layout_width="198dp"
-                android:layout_height="36dp"
-                android:layout_below="@+id/search_view"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                android:layout_toRightOf="@id/categorytxt"
-                android:hint="apartment/house"
-                android:inputType="text"
-                android:textSize="14sp" />
+                <TableRow >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Title"
+                        android:layout_margin="10dp" />
 
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/tenure_spinner"
-                android:layout_width="fill_parent"
-                android:layout_height="40dp"
-                android:layout_below="@+id/landarea_gettxt"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                android:layout_toRightOf="@id/tenuretxt"
-                android:dropDownSelector="@color/lightBlue"
-                android:entries="@array/tenure_list"
-                android:textAlignment="center" />
+                    <EditText
+                        android:id="@+id/addTitle"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:maxLength="80"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:inputType="textMultiLine"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        />
+                </TableRow>
+
+                <TableRow >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Description"
+                        android:layout_margin="10dp" />
+
+                    <EditText
+                        android:id="@+id/addDescription"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:maxLength="80"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:inputType="textMultiLine"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Category"
+                        android:layout_margin="10dp"
+                        />
+
+                    <TableRow>
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/addCategory"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:entries="@array/Category_List"
+                            android:layout_marginTop="10dp"
+                            />
+                    </TableRow>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Tenure"
+                        android:layout_margin="10dp"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/addTenure"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:entries="@array/tenure_list"
+                        android:layout_marginTop="10dp"
+                        />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Furnishing"
+                        android:layout_margin="10dp"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/addFurnishing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Furnishing"
+                        android:layout_marginTop="10dp"
+                        android:entries="@array/Furnishing_list"
+                        />
+                </TableRow>
 
 
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/bedRoomsNum_spinner"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_below="@+id/roomsNum_spinner"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                android:layout_toRightOf="@id/tenuretxt"
-                android:dropDownSelector="@color/lightBlue"
-                android:entries="@array/roomsNum_list"
-                android:textAlignment="center" />
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Built-up"
+                        android:layout_margin="10dp"
+                        />
 
+                    <EditText
+                        android:id="@+id/addBuiltup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLength="8"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center"
+                        />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/builtup_gettxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/category_gettxt"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                android:layout_toRightOf="@+id/builtuptxt"
-                android:inputType="numberDecimal"
-                android:textSize="14sp" />
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Land Area"
+                        android:layout_margin="10dp"
+                        />
 
-            <EditText
-                android:id="@+id/landarea_gettxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/builtup_gettxt"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="4dp"
-                android:layout_toRightOf="@+id/landareatxt"
-                android:inputType="numberDecimal"
-                android:textSize="14sp" />
+                    <EditText
+                        android:id="@+id/addLandArea"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLength="8"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:inputType="number"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        />
+                </TableRow>
 
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/furnishing_spinner"
-                android:layout_width="fill_parent"
-                android:layout_height="40dp"
-                android:layout_below="@+id/tenure_spinner"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                android:layout_toRightOf="@id/tenuretxt"
-                android:dropDownSelector="@color/lightBlue"
-                android:entries="@array/Furnishing_list"
-                android:textAlignment="center"/>
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Bedrooms"
+                        android:layout_margin="10dp"
+                        />
 
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/roomsNum_spinner"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_below="@+id/furnishing_spinner"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                android:layout_toRightOf="@id/tenuretxt"
-                android:dropDownSelector="@color/lightBlue"
-                android:entries="@array/roomsNum_list"
-                android:textAlignment="center" />
-            />
+                    <Spinner
+                        android:id="@+id/addBedroom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Bedrooms"
+                        android:inputType="numberDecimal"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:entries="@array/roomsNum_list"
+                        />
+                </TableRow>
 
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/toiletNum_spinner"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_below="@+id/bedRoomsNum_spinner"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                android:layout_toRightOf="@id/tenuretxt"
-                android:dropDownSelector="@color/lightBlue"
-                android:entries="@array/roomsNum_list"
-                android:textAlignment="center" />
-            />
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Washrooms"
+                        android:layout_margin="10dp"
+                        />
 
-            <EditText
-                android:id="@+id/title_gettxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/toiletNum_spinner"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                android:layout_toRightOf="@id/titletxt"
-                android:ems="10"
-                android:inputType="textMultiLine"
-                android:textSize="14sp" />
+                    <Spinner
+                        android:id="@+id/addToilet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:entries="@array/roomsNum_list"
+                        />
 
-            <EditText
-                android:id="@+id/description_gettxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/title_gettxt"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                android:layout_toRightOf="@id/descriptiontxt"
-                android:inputType="textMultiLine" />
+                </TableRow>
 
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Price"
+                        android:layout_margin="10dp"
+                        />
+
+                    <EditText
+                        android:id="@+id/addPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLength="9"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:inputType="numberDecimal"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        />
+                </TableRow>
+
+            </TableLayout>
 
             <ImageView
                 android:id="@+id/upload_img"
-                android:layout_width="63dp"
-                android:layout_height="53dp"
-                android:layout_below="@id/askingpricetxt"
-                android:layout_marginTop="25dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_uploadphoto"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
                 android:clickable="true"
-                android:onClick="UploadImage"
-                android:src="@drawable/ic_uploadphoto" />
+                />
 
-            <ProgressBar
-                android:id="@+id/imguploader_progressBar"
-                style="?android:attr/progressBarStyle"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/askingpricetxt"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
-                android:layout_toRightOf="@+id/upload_img" />
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/editImage1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/editImage2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="10dp"
+                    />
 
 
-        </RelativeLayout>
+                <ImageView
+                    android:id="@+id/editImage3"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/editImage4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="10dp" />
+
+                <ImageView
+                    android:id="@+id/editImage5"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/editImage6"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/editImage7"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/editImage8"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/editImage9"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="10dp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
 
     </ScrollView>
 
 
-</RelativeLayout>
+
+
+</LinearLayout>
