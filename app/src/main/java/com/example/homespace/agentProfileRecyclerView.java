@@ -1,6 +1,7 @@
 package com.example.homespace;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,7 @@ public class agentProfileRecyclerView extends FirebaseRecyclerAdapter<AuctionHel
     private OnItemClickListener mListener;
     private String id;
     private Context context;
+    private boolean isMyself;
 
     public interface OnItemClickListener{
         void onItemClick(int position);
@@ -47,12 +49,14 @@ public class agentProfileRecyclerView extends FirebaseRecyclerAdapter<AuctionHel
      * {@link FirebaseRecyclerOptions} for configuration options.
      *
      * @param options
+     * @param isMyself
      */
-    public agentProfileRecyclerView(@NonNull FirebaseRecyclerOptions<AuctionHelperClass> options, Context context, String id) {
+    public agentProfileRecyclerView(@NonNull FirebaseRecyclerOptions<AuctionHelperClass> options, Context context, String id, boolean isMyself) {
         super(options);
 
         this.context=context;
         this.id=id;
+        this.isMyself = isMyself;
     }
 
     @Override
@@ -89,6 +93,19 @@ public class agentProfileRecyclerView extends FirebaseRecyclerAdapter<AuctionHel
             public void onCancelled(@NonNull DatabaseError error) { }
         });
 
+        if (isMyself)
+        {
+            holder.editPropertybtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //start intent to edit property
+                    Intent intent = new Intent(context,editProperty.class);
+                    intent.putExtra("model",model);
+                    intent.putExtra("id",id);
+                    context.startActivity(intent);
+                }
+            });
+        }
     }
 
     @NonNull
@@ -101,12 +118,12 @@ public class agentProfileRecyclerView extends FirebaseRecyclerAdapter<AuctionHel
 
     class myViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title, price, builtup, landarea, roomNum, toiletNum, furnishing, select;
+        TextView title, price, builtup, landarea, roomNum, toiletNum, furnishing;
         ViewPager viewPager;
         Button radiobtn_unchecked;
         Button radiobtn_checked;
         CardView cardView;
-        ImageView cancel, delete, compare, back;
+        ImageView editPropertybtn;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -122,8 +139,13 @@ public class agentProfileRecyclerView extends FirebaseRecyclerAdapter<AuctionHel
             radiobtn_unchecked = (Button) itemView.findViewById(R.id.radio_btn_unchecked);
             radiobtn_checked = (Button) itemView.findViewById(R.id.radio_btn_checked);
             cardView = (CardView) itemView.findViewById(R.id.cart_cardview);
+            editPropertybtn = (ImageView) itemView.findViewById(R.id.property_edit);
 
 
+            if (isMyself)
+            {
+                editPropertybtn.setVisibility(View.VISIBLE);
+            }
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

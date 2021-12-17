@@ -23,5 +23,19 @@
         <item>6</item>
     </string-array>
 
+    <string-array name="Category_List">
+        <item>Apartment/Flat</item>
+        <item>Condominium</item>
+        <item>Terrace/Link/Superlink</item>
+        <item>Bungalow</item>
+        <item>Semi-Detached (Semi-D)</item>
+        <item>Loft</item>
+        <item>Townhouse</item>
+        <item>Penthouse</item>
+        <item>Duplex / Studio</item>
+        <item>SoHo/SoVo/SoFo</item>
+        <item>Shophouse</item>
+        <item>Mixed Development</item>
+    </string-array>
 
 </resources>

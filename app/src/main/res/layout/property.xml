@@ -22,7 +22,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient_bg"></RelativeLayout>
+            android:background="@drawable/gradient_black_transparent_layer"></RelativeLayout>
 
         <TextView
             android:id="@+id/Card_title"

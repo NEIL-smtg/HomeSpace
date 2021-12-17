@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PropertyCompare"
+    android:orientation="vertical">
+
+    <include layout="@layout/edit_property_snippet_top"/>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:id="@+id/editImage1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp"
+                />
+
+            <ImageView
+                android:id="@+id/editImage2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp"
+                />
+
+
+            <ImageView
+                android:id="@+id/editImage3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp"
+                />
+
+            <ImageView
+                android:id="@+id/editImage4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp" />
+
+            <ImageView
+                android:id="@+id/editImage5"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp"
+                />
+
+            <ImageView
+                android:id="@+id/editImage6"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp"
+                />
+
+            <ImageView
+                android:id="@+id/editImage7"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp"
+                />
+
+            <ImageView
+                android:id="@+id/editImage8"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp"
+                />
+
+            <ImageView
+                android:id="@+id/editImage9"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp"
+                />
+
+            <ImageView
+                android:id="@+id/edit_addImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:src="@drawable/add"
+                />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="35dp"
+        >
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:divider="@drawable/vertical_line"
+            >
+
+            <TableRow >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Title"
+                    android:layout_margin="10dp" />
+
+                <EditText
+                    android:id="@+id/editTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:text="PV15 hello"
+                    android:inputType="textMultiLine"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    />
+            </TableRow>
+
+            <TableRow >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Description"
+                    android:layout_margin="10dp" />
+
+                <EditText
+                    android:id="@+id/editDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:text="PV15 hello"
+                    android:inputType="textMultiLine"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Category"
+                    android:layout_margin="10dp"
+                    />
+
+                <TableRow>
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/editCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:entries="@array/Category_List"
+                        android:layout_marginTop="10dp"
+                        />
+                </TableRow>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Tenure"
+                    android:layout_margin="10dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/editTenure"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:entries="@array/tenure_list"
+                    android:layout_marginTop="10dp"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Furnishing"
+                    android:layout_margin="10dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/editFurnishing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Furnishing"
+                    android:layout_marginTop="10dp"
+                    android:entries="@array/Furnishing_list"
+                    />
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Built-up"
+                    android:layout_margin="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/editBuiltup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Built-up"
+                    android:layout_marginTop="10dp"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Land Area"
+                    android:layout_margin="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/editLandArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Land Area"
+                    android:inputType="number"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Bedrooms"
+                    android:layout_margin="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/editBedroom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Bedrooms"
+                    android:inputType="numberDecimal"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Washrooms"
+                    android:layout_margin="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/editToilet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Washrooms"
+                    android:inputType="number"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Price"
+                    android:layout_margin="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/editPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Price"
+                    android:inputType="numberDecimal"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    />
+            </TableRow>
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

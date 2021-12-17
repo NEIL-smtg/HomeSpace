@@ -63,6 +63,9 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+        <activity
+            android:name=".editProperty"
+            android:exported="true"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"

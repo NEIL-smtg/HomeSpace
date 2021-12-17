@@ -9,6 +9,8 @@
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/circle.xml" value="0.1828125" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/compare_text_item.xml" value="0.1796875" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/gradient_bg.xml" value="0.1828125" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/gradient_black_transparent_layer.xml" value="0.1796875" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/gradient_black_transparent_layer_inverted.xml" value="0.1796875" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/ic_arrow_back.xml" value="0.1796875" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/ic_back.xml" value="0.1" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1828125" />
@@ -26,13 +28,15 @@
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/vertical_line.xml" value="0.1796875" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/drawable/white_round.xml" value="0.24375" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_add_item.xml" value="0.176" />
-        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_agent_view_profile_page.xml" value="0.176" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_agent_view_profile_page.xml" value="0.2" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_cart.xml" value="0.164453125" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_edit_property.xml" value="0.264" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_intro.xml" value="0.2" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_login.xml" value="0.167578125" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_mainpage.xml" value="0.2" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_menu.xml" value="0.2" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_my_profile.xml" value="0.164453125" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_profile.xml" value="0.2" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_property.xml" value="0.167578125" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/activity_property_action_page.xml" value="0.176" />
@@ -47,6 +51,7 @@
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/cart_snippet_top.xml" value="0.2" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/compare_snippet_top.xml" value="0.164453125" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/compare_text_item.xml" value="0.176" />
+        <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/edit_property_snippet_top.xml" value="0.4" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/fragment_add_item.xml" value="0.264" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/fragment_add_property.xml" value="0.264" />
         <entry key="..\:/Users/sungh/AndroidStudioProjects/HomeSpace/app/src/main/res/layout/fragment_gallery.xml" value="0.1" />

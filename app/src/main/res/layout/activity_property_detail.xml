@@ -204,7 +204,7 @@
                 android:layout_toRightOf="@id/tenuretxt"
                 android:dropDownSelector="@color/lightBlue"
                 android:entries="@array/tenure_list"
-                android:textAlignment="center"/>
+                android:textAlignment="center" />
 
 
             <androidx.appcompat.widget.AppCompatSpinner

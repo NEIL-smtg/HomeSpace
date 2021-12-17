@@ -21,30 +21,47 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class agentViewProfilePage extends AppCompatActivity {
 
     //widget
-    TextView agentName, agentEmail, agentPhone, agentCompany, agentDescription;
+    TextView agentName, agentEmail, agentPhone, agentCompany, agentDescription, edit_profile_btn;
     CircleImageView agentpropic,back;
-    RecyclerView recyclerView;
+    ArrayList<RecyclerView> recyclerView = new ArrayList<>();
 
     //vars
-    String id,itemType;
+    String id;
     AgentInfoAdapter agent;
-    agentProfileRecyclerView mainAdapter;
+    ArrayList<agentProfileRecyclerView> mainAdapter = new ArrayList<>();
+    boolean isMyself;
+    ArrayList<String> typelist = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agent_view_profile_page);
 
+        typelist.add("Auction");
+        typelist.add("Rent");
+        typelist.add("Room");
+        typelist.add("Sale");
+
+        SharedPreferences preferences = getSharedPreferences("MyPrefs",MODE_PRIVATE);
+
         //get incoming intent
-        agent = getIntent().getParcelableExtra("agentData");
-        id = agent.getId();
-        itemType = agent.getItemType();
+        if (getIntent().getParcelableExtra("agentData") != null) {
+            agent = getIntent().getParcelableExtra("agentData");
+            id = agent.getId();
+        }
+        else
+        {
+            id = preferences.getString("id","");
+        }
+
 
         //widgets
         agentName = (TextView) findViewById(R.id.agentProfileName);
@@ -53,13 +70,39 @@ public class agentViewProfilePage extends AppCompatActivity {
         agentCompany = (TextView) findViewById(R.id.agentCompany);
         agentDescription = (TextView) findViewById(R.id.agentDescription);
         agentpropic = (CircleImageView) findViewById(R.id.propic);
-        recyclerView = (RecyclerView) findViewById(R.id.agentprofile_recyclerview);
+        edit_profile_btn = (TextView) findViewById(R.id.edit_profile_btn);
 
         back = (CircleImageView) findViewById(R.id.agentprofile_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { finish();}
         });
+
+        if (preferences.getString("id","").equals(id))
+        {
+            isMyself = true;
+
+            edit_profile_btn.setVisibility(View.VISIBLE);
+            edit_profile_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(agentViewProfilePage.this, Profile.class);
+                    startActivity(intent);
+
+                }
+            });
+        }
+
+        RecyclerView recyclerView1 = (RecyclerView) findViewById(R.id.agentprofile_recyclerview1);
+        RecyclerView recyclerView2 = (RecyclerView) findViewById(R.id.agentprofile_recyclerview2);
+        RecyclerView recyclerView3 = (RecyclerView) findViewById(R.id.agentprofile_recyclerview3);
+        RecyclerView recyclerView4 = (RecyclerView) findViewById(R.id.agentprofile_recyclerview4);
+
+        recyclerView.add(recyclerView1);
+        recyclerView.add(recyclerView2);
+        recyclerView.add(recyclerView3);
+        recyclerView.add(recyclerView4);
 
         setup();
         setupRecyclerView();
@@ -68,7 +111,9 @@ public class agentViewProfilePage extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        mainAdapter.startListening();
+        for (int i = 0; i < typelist.size(); i++) {
+            mainAdapter.get(i).startListening();
+        }
     }
 
 
@@ -76,59 +121,65 @@ public class agentViewProfilePage extends AppCompatActivity {
     /*@Override
     protected void onStop() {
         super.onStop();
-        mainAdapter.stopListening();
+        mainAdapter.get(i).stopListening();
     }*/
 
 
     private void setupRecyclerView()
     {
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //get property data
-        FirebaseRecyclerOptions<AuctionHelperClass> options =
-                new FirebaseRecyclerOptions.Builder<AuctionHelperClass>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference( itemType+"/"+id), AuctionHelperClass.class)
-                        .build();
+        for (int i = 0; i < typelist.size() ; i++) {
+            recyclerView.get(i).setLayoutManager(new LinearLayoutManager(this));
+
+            //get property data
+            FirebaseRecyclerOptions<AuctionHelperClass> options =
+                    new FirebaseRecyclerOptions.Builder<AuctionHelperClass>()
+                            .setQuery(FirebaseDatabase.getInstance().getReference(typelist.get(i) + "/" + id), AuctionHelperClass.class)
+                            .build();
 
 
-        mainAdapter = new agentProfileRecyclerView(options,agentViewProfilePage.this, id);
-        recyclerView.setAdapter(mainAdapter);
+            agentProfileRecyclerView adapter = new agentProfileRecyclerView(options, agentViewProfilePage.this, id, isMyself);
+
+            mainAdapter.add(adapter);
+            recyclerView.get(i).setAdapter(mainAdapter.get(i));
 
 
-        mainAdapter.setOnItemClickListener(new agentProfileRecyclerView.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
+            mainAdapter.get(i).setOnItemClickListener(new agentProfileRecyclerView.OnItemClickListener() {
+                @Override
+                public void onItemClick(int position) {
 
-                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Agents");
+                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Agents");
 
-                reference.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                        AgentInfoAdapter agentfromdb= new AgentInfoAdapter();
-                        ArrayList<AgentInfoAdapter> agentdblist = new ArrayList<>();
+                            AgentInfoAdapter agentfromdb = new AgentInfoAdapter();
+                            ArrayList<AgentInfoAdapter> agentdblist = new ArrayList<>();
 
-                        for (DataSnapshot ds : snapshot.getChildren()) {
-                            agentfromdb = ds.getValue(AgentInfoAdapter.class);
+                            for (DataSnapshot ds : snapshot.getChildren()) {
+                                agentfromdb = ds.getValue(AgentInfoAdapter.class);
 
-                            //work in mainpage
-                            if (agentfromdb.getId().equals(agent.getId()))
-                            {
-                                agentdblist.add(agentfromdb);
+                                //work in mainpage
+                                if (agentfromdb.getId().equals(agent.getId())) {
+                                    agentdblist.add(agentfromdb);
+                                }
                             }
+
+
+                            Intent intent = new Intent(agentViewProfilePage.this, PropertyActionPage.class);
+                            intent.putExtra("agentPropertyItemOnClick", agentdblist.get(position));
+                            startActivity(intent);
                         }
 
-
-                        Intent intent = new Intent(agentViewProfilePage.this, PropertyActionPage.class);
-                        intent.putExtra("agentPropertyItemOnClick", agentdblist.get(position));
-                        startActivity(intent);
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) { }
-                });
-            }
-        });
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                        }
+                    });
+                }
+            });
+        }
     }
 
     private void setup()
@@ -156,7 +207,6 @@ public class agentViewProfilePage extends AppCompatActivity {
                 else
                 {
                     agentPhone.setText("null");
-
                 }
 
                 if (snapshot.child("company").exists())
@@ -166,7 +216,6 @@ public class agentViewProfilePage extends AppCompatActivity {
                 else
                 {
                     agentCompany.setText("null");
-
                 }
 
                 if (snapshot.child("description").exists())
@@ -181,10 +230,33 @@ public class agentViewProfilePage extends AppCompatActivity {
         });
 
         //setup profile pic
-        Glide
-                .with(agentViewProfilePage.this)
-                .load(agent.getProfilePic())
-                .into(agentpropic);
+        if (agent != null)
+        {
+            Glide
+                    .with(agentViewProfilePage.this)
+                    .load(agent.getProfilePic())
+                    .into(agentpropic);
+        }
+        else
+        {
+            reference = FirebaseDatabase.getInstance().getReference("User/" + id + "/profilePic");
+            reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.child("imgURL").exists())
+                    {
+                        Glide
+                                .with(agentViewProfilePage.this)
+                                .load(snapshot.child("imgURL").getValue().toString())
+                                .into(agentpropic);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) { }});
+        }
+
+
     }
 
 }

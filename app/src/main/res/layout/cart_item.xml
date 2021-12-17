@@ -15,16 +15,41 @@
         android:layout_height="match_parent"
         >
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/cart_item_viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            />
+        <RelativeLayout
+            android:id="@+id/viewPager_relay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/cart_item_viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/ic_launcher_background"
+                />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/property_edit"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/white_round"
+                android:clickable="true"
+                android:src="@drawable/ic_edit"
+                android:visibility="invisible"/>
+
+        </RelativeLayout>
+
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/cart_item_viewPager"
+            android:layout_below="@id/viewPager_relay"
             >
 
 

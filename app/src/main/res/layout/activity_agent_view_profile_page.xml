@@ -55,58 +55,52 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="30dp"
                     android:layout_gravity="center_horizontal"
-                    >
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="36dp"
-                        android:src="@drawable/ic_email"
-                        />
+                        android:src="@drawable/ic_email" />
 
                     <TextView
                         android:id="@+id/agentEmail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="sunghui2000@hotmail.com"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="5dp"
                         android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
                         android:autoLink="email"
                         android:linksClickable="true"
-                        />
+                        android:text="sunghui2000@hotmail.com"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="30dp"
                     android:layout_marginLeft="60dp"
-                    >
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="36dp"
-                        android:src="@drawable/ic_phone"
-                        />
+                        android:src="@drawable/ic_phone" />
 
                     <TextView
                         android:id="@+id/agentPhone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="+60169230930"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="5dp"
                         android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
                         android:autoLink="phone"
                         android:linksClickable="true"
-                        />
+                        android:text="+60169230930"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -123,29 +117,26 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="30dp"
                     android:layout_marginLeft="60dp"
-                    >
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="36dp"
-                        android:src="@drawable/ic_company"
-                        />
+                        android:src="@drawable/ic_company" />
 
                     <TextView
                         android:id="@+id/agentCompany"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Alloybin berhad"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="5dp"
                         android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
                         android:autoLink="web"
                         android:linksClickable="true"
-                        />
+                        android:text="Alloybin berhad"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -162,20 +153,18 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="20dp"
                     android:layout_margin="20dp"
-                    >
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="8dp">
 
                     <TextView
                         android:id="@+id/agentDescription"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hint="This agent has not added any description...."
                         android:layout_margin="10dp"
-                        android:textSize="16sp"
+                        android:hint="This agent has not added any description...."
                         android:textColor="@color/black"
-                        />
+                        android:textSize="16sp" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -189,18 +178,77 @@
                     android:textSize="22sp"
                     android:textStyle="bold|italic" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Auction"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/agentprofile_recyclerview"
-                    android:layout_marginTop="20dp"
+                    android:id="@+id/agentprofile_recyclerview1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:nestedScrollingEnabled="false"/>
+                    android:layout_marginTop="20dp"
+                    android:nestedScrollingEnabled="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Rent"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/agentprofile_recyclerview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:nestedScrollingEnabled="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Room Renting"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/agentprofile_recyclerview3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:nestedScrollingEnabled="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Property on Sale"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/agentprofile_recyclerview4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:nestedScrollingEnabled="false" />
 
             </LinearLayout>
 
         </LinearLayout>
-
 
     </ScrollView>
 
@@ -214,6 +262,25 @@
         android:background="@drawable/white_round"
         android:clickable="true"
         android:src="@drawable/ic_arrow_back" />
+
+    <TextView
+        android:id="@+id/edit_profile_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/white_round"
+        android:padding="10dp"
+        android:text="Edit Profile"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:clickable="true"/>
 
 
 </RelativeLayout>

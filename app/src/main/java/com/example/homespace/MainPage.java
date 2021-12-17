@@ -150,25 +150,25 @@ public class MainPage extends AppCompatActivity {
 
     public void ProfileOnClick(View view)
     {
-        Intent i = new Intent(this,Profile.class);
+        Intent i = new Intent(MainPage.this,agentViewProfilePage.class);
         startActivity(i);
     }
 
     public void addItemOnClick(View view)
     {
-        Intent i = new Intent(this, AddItem.class);
+        Intent i = new Intent(MainPage.this, AddItem.class);
         startActivity(i);
     }
 
     public void CartOnClick(View view)
     {
-        Intent i = new Intent(this,Cart.class);
+        Intent i = new Intent(MainPage.this,Cart.class);
         startActivity(i);
     }
 
     public void SettingOnClick(View view)
     {
-        Intent i = new Intent(this,Setting.class);
+        Intent i = new Intent(MainPage.this,Setting.class);
         startActivity(i);
     }
 }
