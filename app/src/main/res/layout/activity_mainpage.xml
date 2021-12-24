@@ -59,27 +59,26 @@
         android:id="@+id/homespacetxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/mainpage_profilepic"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="@string/app_name"
+        android:text="CARESPACE"
         android:textColor="@color/cardview_dark_background"
         android:textSize="34sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/mainpage_profilepic"
-        android:layout_centerHorizontal="true"/>
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_view"
+        android:id="@+id/mainpage_search_view"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:layout_below="@id/homespacetxt"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
         android:focusable="false"
         app:closeIcon="@drawable/ic_delete"
         app:iconifiedByDefault="false"
-        app:queryHint="Search Property/Location"
-        app:searchIcon="@drawable/ic_baseline_search_24"
-        android:layout_below="@id/homespacetxt"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp">
+        app:queryHint="Search clinic/hospital nearby"
+        app:searchIcon="@drawable/ic_baseline_search_24">
 
     </androidx.appcompat.widget.SearchView>
 
@@ -88,7 +87,7 @@
         android:id="@+id/mainpage_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/search_view"
+        android:layout_below="@+id/mainpage_search_view"
         android:layout_marginTop="20dp">
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,114 +14,100 @@
         android:layout_marginTop="16dp"
         android:clickable="true"
         android:onClick="back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back" />
 
     <ImageView
-        android:id="@+id/auctionn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/addAuction_btn"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@id/additem_back"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="65dp"
         android:clickable="true"
         android:onClick="AuctionOnClick"
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.174"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/additem_back"
-        app:layout_constraintVertical_bias="0.109" />
+        android:src="@drawable/auction" />
 
     <TextView
-        android:id="@+id/auctiontxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginEnd="36dp"
-        android:text="Auction"
-        app:layout_constraintBottom_toBottomOf="@+id/auctionn"
-        app:layout_constraintEnd_toEndOf="@+id/auctionn"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/auctionn"
-        app:layout_constraintTop_toTopOf="@+id/auctionn"
-        app:layout_constraintVertical_bias="0.871" />
+        android:layout_alignLeft="@id/addAuction_btn"
+        android:layout_alignRight="@id/addAuction_btn"
+        android:layout_below="@id/addAuction_btn"
+        android:text="AUCTION"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/rentt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/addRent_btn"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@id/additem_back"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="65dp"
+        android:layout_marginRight="45dp"
         android:clickable="true"
         android:onClick="RentOnClick"
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.605"
-        app:layout_constraintStart_toEndOf="@+id/auctionn"
-        app:layout_constraintTop_toBottomOf="@+id/additem_back"
-        app:layout_constraintVertical_bias="0.109" />
+        android:src="@drawable/rent" />
 
     <TextView
-        android:id="@+id/renttxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="rent"
-        app:layout_constraintBottom_toBottomOf="@+id/rentt"
-        app:layout_constraintEnd_toEndOf="@+id/rentt"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="@+id/rentt"
-        app:layout_constraintTop_toTopOf="@+id/rentt"
-        app:layout_constraintVertical_bias="0.871" />
+        android:layout_alignLeft="@+id/addRent_btn"
+        android:layout_alignRight="@+id/addRent_btn"
+        android:layout_below="@id/addRent_btn"
+        android:text="RENT"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/rentroom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/addRoom_btn"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@id/addAuction_btn"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="65dp"
         android:clickable="true"
         android:onClick="RoomOnClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/auctionn"
-        app:layout_constraintVertical_bias="0.204"
-        android:src="@drawable/ic_launcher_background" />
+        android:src="@drawable/room" />
 
     <TextView
-        android:id="@+id/rentroomtxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="rentroom"
-        app:layout_constraintBottom_toBottomOf="@+id/rentroom"
-        app:layout_constraintEnd_toEndOf="@+id/rentroom"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="@+id/rentroom"
-        app:layout_constraintTop_toTopOf="@+id/rentroom"
-        app:layout_constraintVertical_bias="0.825" />
+        android:layout_alignLeft="@+id/addRoom_btn"
+        android:layout_alignRight="@+id/addRoom_btn"
+        android:layout_below="@+id/addRoom_btn"
+        android:text="ADD ROOM"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/salee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/addSale_btn"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/addRent_btn"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="65dp"
+        android:layout_marginRight="45dp"
         android:clickable="true"
         android:onClick="SaleOnClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toEndOf="@+id/rentroom"
-        app:layout_constraintTop_toBottomOf="@+id/rentt"
-        app:layout_constraintVertical_bias="0.201"
-        android:src="@drawable/ic_launcher_background" />
+        android:src="@drawable/sale" />
 
     <TextView
-        android:id="@+id/saletxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="for sale"
-        app:layout_constraintBottom_toBottomOf="@+id/salee"
-        app:layout_constraintEnd_toEndOf="@+id/salee"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="@+id/salee"
-        app:layout_constraintTop_toTopOf="@+id/salee"
-        app:layout_constraintVertical_bias="0.834" />
+        android:layout_alignLeft="@+id/addSale_btn"
+        android:layout_alignRight="@+id/addSale_btn"
+        android:layout_below="@+id/addSale_btn"
+        android:text="FOR SALE"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -10,7 +10,7 @@
     <include layout="@layout/add_property_snippet_top"/>
 
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -34,7 +34,8 @@
                 app:defaultQueryHint="location"
                 app:closeIcon="@drawable/ic_delete"
                 app:iconifiedByDefault="false"
-                app:searchIcon="@drawable/ic_baseline_search_24" />
+                app:searchIcon="@drawable/ic_baseline_search_24"
+                />
 
             <TableLayout
                 android:layout_width="300dp"
@@ -385,9 +386,7 @@
         </LinearLayout>
 
 
-
-
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
 

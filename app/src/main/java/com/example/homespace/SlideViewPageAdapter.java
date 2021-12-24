@@ -73,22 +73,22 @@ public class SlideViewPageAdapter extends PagerAdapter {
         switch (position)
         {
             case 0:
-                logo.setImageResource(R.drawable.spacelogo);
+                logo.setImageResource(R.drawable.logo);
                 slide1_indicator.setImageResource(R.drawable.slide_indicator_selected);
                 slide2_indicator.setImageResource(R.drawable.slide_indicator_unselected);
 
-                title.setText("frame1");
-                desc.setText("frame1 description");
+                title.setText("HOMESPACE");
+                desc.setText("Find your home");
                 back.setVisibility(View.GONE);
                 break;
 
             case 1:
-                logo.setImageResource(R.drawable.googlelogo);
+                logo.setImageResource(R.drawable.logo);
                 slide1_indicator.setImageResource(R.drawable.slide_indicator_unselected);
                 slide2_indicator.setImageResource(R.drawable.slide_indicator_selected);
 
-                title.setText("frame2");
-                desc.setText("frame2 description");
+                title.setText("HOMESPACE");
+                desc.setText("One step close to your dream house");
                 back.setVisibility(View.VISIBLE);
                 forward.setVisibility(View.GONE);
                 break;

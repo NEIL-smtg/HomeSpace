@@ -133,6 +133,13 @@ public class PropertyDetail extends AppCompatActivity {
             }
         });
 
+        imgUploader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UploadImage();
+            }
+        });
+
         progressDialog = new ProgressDialog(PropertyDetail.this);
         progressDialog.setMessage("Uploading images !!! please wait.....");
     }
@@ -143,7 +150,7 @@ public class PropertyDetail extends AppCompatActivity {
         itemType = bundle.getString("itemType");
     }
 
-    public void UploadImage(View view)
+    public void UploadImage()
     {
         Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         galleryIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
@@ -176,7 +183,6 @@ public class PropertyDetail extends AppCompatActivity {
                     .load(ImageList.get(i))
                     .into(editImage.get(i));
                 }
-
 
             }
             else

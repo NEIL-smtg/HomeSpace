@@ -21,7 +21,8 @@
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/slide_adapter_viewpager"
                 android:layout_width="match_parent"
-                android:layout_height="300dp" />
+                android:layout_height="300dp"
+                />
 
             <TextView
                 android:id="@+id/property_title"
@@ -32,7 +33,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
-                android:text="PV15 ONSALEEEE DEFAULTTTTTT NOBODY CARESS"
+                android:text="HOSPITAL ABC"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -43,8 +44,9 @@
                 android:layout_below="@id/property_title"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="DEFAULT DESCRIPTION"
+                android:text="Jalan Hospital ABC,TAMAN EDG"
                 android:textSize="18sp" />
+
 
             <LinearLayout
                 android:id="@+id/postedby"

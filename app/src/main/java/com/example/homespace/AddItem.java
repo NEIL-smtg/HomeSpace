@@ -9,17 +9,17 @@ import android.widget.ImageView;
 
 public class AddItem extends AppCompatActivity {
 
-    ImageView auction,rent,rentroom,forsale;
+    ImageView auction,rent, room, sale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
 
-        auction = (ImageView) findViewById(R.id.auctionn);
-        rent = (ImageView) findViewById(R.id.rentt);
-        rentroom = (ImageView) findViewById(R.id.rentroom);
-        forsale = (ImageView) findViewById(R.id.salee);
+        auction = (ImageView) findViewById(R.id.addAuction_btn);
+        rent = (ImageView) findViewById(R.id.addRent_btn);
+        room = (ImageView) findViewById(R.id.addRoom_btn);
+        sale = (ImageView) findViewById(R.id.addSale_btn);
     }
 
     public void back(View view)
