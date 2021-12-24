@@ -6,15 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".AddItem">
 
-    <ImageView
-        android:id="@+id/additem_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:clickable="true"
-        android:onClick="back"
-        app:srcCompat="@drawable/ic_back" />
+    <include layout="@layout/additem_snippet_top"/>
 
     <ImageView
         android:id="@+id/addAuction_btn"
@@ -24,7 +16,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginStart="45dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="105dp"
         android:clickable="true"
         android:onClick="AuctionOnClick"
         android:src="@drawable/auction" />
@@ -46,7 +38,7 @@
         android:layout_height="120dp"
         android:layout_below="@id/additem_back"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="105dp"
         android:layout_marginRight="45dp"
         android:clickable="true"
         android:onClick="RentOnClick"
